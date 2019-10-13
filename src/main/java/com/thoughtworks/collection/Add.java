@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static com.thoughtworks.collection.Filters.*;
+import static com.thoughtworks.collection.PredicateFilters.*;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
