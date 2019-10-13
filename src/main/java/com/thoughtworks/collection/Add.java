@@ -1,22 +1,14 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.DoubleSummaryStatistics;
 import java.util.List;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Add {
-    private static final IntPredicate IS_EVEN = element -> element % 2 == 0;
-    private static final IntPredicate IS_ODD = element -> element % 2 != 0;
-    public static final Predicate<Integer> FILTER_IS_ODD = element -> element % 2 != 0;
-    public static final Predicate<Integer> FILTER_EVEN = element -> element % 2 == 0;
+import static com.thoughtworks.collection.Filters.*;
 
+public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
         int max = Math.max(leftBorder, rightBorder);
         int min = Math.min(leftBorder, rightBorder);
