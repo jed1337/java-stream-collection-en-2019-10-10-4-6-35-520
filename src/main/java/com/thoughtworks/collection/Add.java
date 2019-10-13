@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static com.thoughtworks.collection.PredicateFilters.*;
+import static com.thoughtworks.collection.Utils.getMedianFromList;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -56,14 +57,7 @@ public class Add {
                 .filter(FILTER_EVEN)
                 .collect(Collectors.toList());
 
-        if(evenList.size()%2==0){
-            double leftMiddleElement  = evenList.get(evenList.size() / 2-1);
-            double rightMiddleElement = evenList.get((evenList.size() / 2));
-
-            return (leftMiddleElement+rightMiddleElement)/2;
-        } else{
-            return evenList.get((evenList.size() / 2) + 1);
-        }
+        return getMedianFromList(evenList);
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {

@@ -1,8 +1,9 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.List;
+
+import static com.thoughtworks.collection.PredicateFilters.FILTER_IS_ODD;
+import static com.thoughtworks.collection.Utils.getMedianFromList;
 
 public class Reduce {
 
@@ -13,42 +14,54 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .reduce(Math::max)
+                .orElse(0);
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .reduce(Math::min)
+                .orElse(0);
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .mapToDouble(i -> i)
+                .average()
+                .orElse(0);
+
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        return getMedianFromList(arrayList);
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .reduce(0, (a, b) -> a==0 && b%2==0? a=b : a);
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        return arrayList.indexOf(getFirstEven());
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return this.arrayList.equals(arrayList);
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        return getMedianFromList(arrayList);
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .filter(FILTER_IS_ODD)
+                .reduce((a,b)-> b)
+                .orElse(0);
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.indexOf(getLastOdd());
     }
 }
