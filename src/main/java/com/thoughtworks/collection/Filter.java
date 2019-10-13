@@ -1,9 +1,6 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import static com.thoughtworks.collection.PredicateFilters.*;
@@ -18,7 +15,7 @@ public class Filter {
 
     public List<Integer> filterEven() {
         return array.stream()
-                .filter(FILTER_EVEN)
+                .filter(FILTER_IS_EVEN)
                 .collect(Collectors.toList());
     }
 

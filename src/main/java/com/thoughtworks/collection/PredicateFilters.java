@@ -9,5 +9,5 @@ public class PredicateFilters {
     public static final IntPredicate IS_EVEN = element -> element % 2 == 0;
     public static final IntPredicate IS_ODD = element -> element % 2 != 0;
     public static final Predicate<Integer> FILTER_IS_ODD = element -> element % 2 != 0;
-    public static final Predicate<Integer> FILTER_EVEN = element -> element % 2 == 0;
+    public static final Predicate<Integer> FILTER_IS_EVEN = element -> element % 2 == 0;
 }

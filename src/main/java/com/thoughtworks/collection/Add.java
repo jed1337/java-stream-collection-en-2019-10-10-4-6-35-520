@@ -54,7 +54,7 @@ public class Add {
 
     public double getMedianOfEven(List<Integer> arrayList) {
         List<Integer> evenList = arrayList.stream()
-                .filter(FILTER_EVEN)
+                .filter(FILTER_IS_EVEN)
                 .collect(Collectors.toList());
 
         return getMedianFromList(evenList);
@@ -62,27 +62,27 @@ public class Add {
 
     public double getAverageOfEven(List<Integer> arrayList) {
         return arrayList.stream()
-                .filter(FILTER_EVEN)
+                .filter(FILTER_IS_EVEN)
                 .collect(Collectors.summarizingDouble(i -> i))
                 .getAverage();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
         return arrayList.stream()
-                .filter(FILTER_EVEN)
+                .filter(FILTER_IS_EVEN)
                 .anyMatch(element -> element.equals(specialElment));
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
         return arrayList.stream()
-                .filter(FILTER_EVEN)
+                .filter(FILTER_IS_EVEN)
                 .distinct()
                 .collect(Collectors.toList());
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
         List<Integer> evenList = arrayList.stream()
-                .filter(FILTER_EVEN)
+                .filter(FILTER_IS_EVEN)
                 .sorted()
                 .collect(Collectors.toList());
         List<Integer> oddList = arrayList.stream()
