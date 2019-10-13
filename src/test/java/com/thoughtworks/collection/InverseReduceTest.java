@@ -24,5 +24,3 @@ public class InverseReduceTest {
         assertThat(inverseReduce.divideToSmaller(9)).isEqualTo(resultList);
     }
 }
-
-us
